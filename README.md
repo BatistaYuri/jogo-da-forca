@@ -1,6 +1,6 @@
 # jogo-da-forca
 
-https://github.com/BatistaYuri/jogo-da-forca/blob/main/README.md
+https://github.com/BatistaYuri/jogo-da-forca
 
 ```sh
 python -m server
