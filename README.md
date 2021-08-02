@@ -1,4 +1,4 @@
-# jogo-da-forcar
+# jogo-da-forca
 
 ```sh
 python -m server
