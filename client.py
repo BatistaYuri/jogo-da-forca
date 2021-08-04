@@ -11,10 +11,10 @@ def Main():
     print('Vamos começar o jogo da forca')
 
     try:
-        socketCreation()
+        criarSocket()
     except Exception as e: print(e)
 
-def sendChosenLetter (ltr):
+def enviarLetraEscolhida (ltr):
     client.send(ltr.encode('ascii'))  
     
 def desenhar (chances):
@@ -76,9 +76,11 @@ def desenhar (chances):
         print('|')
             
 def socketCreation():
+    # Cria um socket TCP/IP
     clientTCP = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     host = '127.0.0.1'
     port = 8000
+    #conectar o socket à uma porta
     clientTCP.connect((host,port))
     global client
     client = clientTCP
@@ -92,7 +94,7 @@ def socketCreation():
             desenhar(chances)
         print('   ' + palavra)
         ltr = input()
-        sendChosenLetter(ltr)
+        enviarLetraEscolhida(ltr)
         msg= clientTCP.recv(2048).decode('ascii')
         if(msg == 'errou'):
             chances -= 1
