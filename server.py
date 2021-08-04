@@ -5,6 +5,7 @@ def main():
     print('Bem-vindo!! Este é o servidor')
     try:
         # Cria um socket TCP/IP
+        # AF_INET é a família de endereços da Internet para IPv4. SOCK_STREAM é o tipo de socket para TCP
         s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
         host = '127.0.0.1'
